@@ -17,11 +17,33 @@ def welcome():
 @app.route("/register/") 
 
 def login():
-	open("passwords.txt" , "a").write("Testing 123\n")          
+	with open("passwords.txt" , "a") as f:
+		f.write("Testing 123\n")          
 	return render_template('login.html', footer = "You have created a new account!")
    
 
+ # Login page~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+@app.route("/login/") 
+
+def login():
+    success = ""
+    filled_form = request.form # if success == "":
+    PasswordFile.write(filled_form["username"] + " " + filled_form["password"] + "\n")         
+	success = "You have created a new account!"
+	return render_template('login.html', footer = success)
     
+	open("passwords.txt", "a") as PassWordFile
+    for line in PasswordFile.readlines():
+    	account = line.split()
+    	if account[0] == filled_form["username"]:
+    		if account[1] == filled_form["password"]:
+    			success = "You have successfully logged in!"
+    			return render_template('login.html', footer = success)
+			else:
+				success = "The password you submitted is incorrect."
+				return render_template('login.html', footer = success)
+	PasswordFile.close()
+        
 
 
 
