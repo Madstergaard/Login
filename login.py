@@ -1,34 +1,29 @@
 from flask import Flask, render_template, request # Capital Flask is a subset of the module flask
+import hashlib
 
 app = Flask(__name__)
 
 
 # Home page~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-@app.route("/") # decorator, goes directly above funtion header, the 
-                # "/" (route) for webpage will run this function
-@app.route("/login/")
-
+@app.route("/") 
+@app.route("/home/", methods = ["POST"])
 
 def welcome():
-    print request.headers # contains metadata about request
-    return render_template('login.html')
-
-
-
-# Authentication page~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-@app.route("/authenticate/", methods = ["GET", "POST"]) # routed to after submit bc of 
-                             # form action = "/authenticate/"
-def auth():                # NOTE: we are using POST requests
+	success = ""
+    	return render_template('login.html', footer = success)
+    
 	
-	user = "cleo"
-	pswd = "patra"
-	filled_form = request.form
-	if filled_form["username"] == user and filled_form["password"] == pswd:
-		success = "You have successfully logged in!"
-	else :
-		success = "You have failed to log in :("
-	
-	return render_template('authenticate.html', header = success )
+# Register page~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+@app.route("/register/") 
+
+def login():
+	open("passwords.txt" , "a").write("Testing 123\n")          
+	return render_template('login.html', footer = "You have created a new account!")
+   
+
+    
+
+
 
 if __name__ == '__main__':
     app.debug = True

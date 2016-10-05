@@ -3,20 +3,45 @@
 <html>
 
 <head>
-	<title> Login </title>
+	<title> Sign in | Create Account </title>
 </head>
 
 <body>
+
+	{{ footer }}
+	<br>
+	<br>
+	
 	<h1> <center> Login to the Best Club in the Universe </center> </h1>
-	<form action = "/authenticate/" method ="POST"> 
-	    Username  <input type ="text" name = "username"> 
+	<form action = "/login/" method ="POST"> 
+	    Username  <input type ="text" name = "username" value = "{{request.form.username}}"> 
 	    <br>
 	    <br>
-	    Password  <input type = "text" name = "password">
+	    Password  <input type = "text" name = "password" value="{{request.form.password}}">
 		<br>
 		<br>
-		<input type="submit"> 
+		<input type="submit" name = "login" value = "Login"> 
 	</form>
+	
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	
+	<h1> <center> Sign Up for the Best Club in the Universe </center> </h1>
+	<form action = "/register/" method ="POST"> 
+	    Username  <input type ="text" name = "username" value = "{{request.form.username}}"> 
+	    <br>
+	    <br>
+	    Password  <input type = "text" name = "password" value="{{request.form.password}}">
+		<br>
+		<br>
+		<input type="submit" name = "register" value = "Register"> 
+	</form>
+
+	
 </body>
 
 </html>
