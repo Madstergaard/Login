@@ -12,16 +12,38 @@
 	<br>
 	<br>
 	
-	<h1> <center> Login to the Best Club in the Universe </center> </h1>
+	<center> <h1> Login to the Best Website in the Universe </h1>
 	<form action = "/login/" method ="POST"> 
-	    Username  <input type ="text" name = "username" value = "{{request.form.username}}"> 
-	    <br>
-	    <br>
-	    Password  <input type = "text" name = "password" value="{{request.form.password}}">
-		<br>
-		<br>
-		<input type="submit" name = "login" value = "Login"> 
+	    <table>
+	    	<tbody>
+	     		<tr>
+        			<td>
+           				Username
+        			</td>
+        			<td>
+           				<input type ="text" name = "username">
+        			</td>
+     			</tr>
+     			<tr>
+        			<td>
+           				Password
+        			</td>
+        			<td>
+           				<input type = "password" name = "password1">
+        			</td>
+     			</tr>
+     			<tr>
+        			<td>
+        			</td>
+        			<td>
+           				<input type="submit" name = "login"> 
+        			</td>
+     			</tr>
+  			</tbody>
+		</table>   
+	
 	</form>
+	</center>
 	
 	<br>
 	<br>
@@ -30,17 +52,46 @@
 	<br>
 	<br>
 	
-	<h1> <center> Sign Up for the Best Club in the Universe </center> </h1>
+	<center> <h1>Join the Best Website in the Universe  </h1>
 	<form action = "/register/" method ="POST"> 
-	    Username  <input type ="text" name = "username" value = "{{request.form.username}}"> 
-	    <br>
-	    <br>
-	    Password  <input type = "text" name = "password" value="{{request.form.password}}">
-		<br>
-		<br>
-		<input type="submit" name = "register" value = "Register"> 
+	    <table>
+	    	<tbody>
+	     		<tr>
+        			<td>
+           				Username
+        			</td>
+        			<td>
+           				<input type ="text" name = "username">
+        			</td>
+     			</tr>
+     			<tr>
+        			<td>
+           				Password
+        			</td>
+        			<td>
+           				<input type = "password" name = "password1">
+        			</td>
+     			</tr>
+     			<tr>
+        			<td>
+           				Reenter Password
+        			</td>
+        			<td>
+           				<input type = "password" name = "password2">
+        			</td>
+     			</tr>
+     			<tr>
+        			<td>
+        			</td>
+        			<td>
+           				<input type="submit" name = "register"> 
+        			</td>
+     			</tr>
+  			</tbody>
+		</table>   
+	
 	</form>
-
+	</center>
 	
 </body>
 
